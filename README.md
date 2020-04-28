@@ -557,3 +557,83 @@ Go to your release dashboard, and reconfigure it.
 
 
 # Release Overview
+
+Active releases can be viewed on the Release overview screen.
+
+* Start date
+* End date
+* Duration Or abort a release
+
+## Filtering
+
+## Exercise: Release Overview
+
+Have a look at the releases from the Releases screen.
+
+# Calendar View
+
+## Overview
+
+* The **Calendar** shows an overview of all releases per month
+* You can filter by release status, release title, and tags
+
+## Blackout periods
+
+You can set and edit blackout periods in the calendar
+
+## Exercise: Calendar
+
+Suppose we want to **Plan** a release, so that it starts automically in two days. The **Planned** release will then show up on the calendar.
+
+* Go to your template
+* Click **New Release**
+* Name the release **My Planned Release**
+* Change the **Start Date** to two days from now
+* Check the **Start automatically on selected date** checkbox
+  * This will make sure the release will automatically be started in two days
+* Change the *Due Date* to two days from now as well
+* Fill in the values for your Variables
+* Click **Create**
+* Go to the **Releases** view and click on **Calendar**
+* Your release should appear in the box for the day two days from now
+
+
+# Release Trains
+
+The Create-Release task
+
+* Creates a release based on template provided
+* Applies title and tags to release
+* If “Start release” box is checked – starts release to run in the background
+* Returns id of release
+* Gate tasks can check for completion 
+
+## Release relationships
+
+## Exercise: Release Trains
+
+* Create a new folder **Master and Subreleases**
+* Create a new template named **Sub Template**
+* Edit template **Sub Template**
+  * Rename the phase title to: **Demo sub release ${release.title}**
+  * Add a *Core > Manual* task so that the release does not finish immediately
+    * Name it *Waiting*
+* Create a new template named **Master Template**
+  * Set **Run automated tasks as user** to *admin*
+  * Set **Password** to your admin password (*admin*)
+  * Click **Create**
+  * Rename the phase title to: **Demo master release ${release.title}**
+  * Add a *Core > Create Release* task
+    * Name it *Create Release*
+  * Add a *Core > Manual* task
+    * Name it *Completed*
+  * Edit the **Create Release** task
+    * Set **Release Title** to *Created release from Master*
+    * Set **Template** to *Sub Template*
+    * Set **Release ID** to *${subReleaseId}*
+  * Edit the *Completed* task
+    * Set **Description** to *The created release is ${subReleaseId}*
+* Create a new release from **Master Template**
+  * Name it *Master Release*
+* Go to the **Release** view
+* Complete the two releases
