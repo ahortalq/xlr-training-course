@@ -681,3 +681,30 @@ However, as we do not have a Jenkins or XL Deploy in this environment, we will o
   * For the **Application**, enter *MyApp*
   * For the **Version**, enter *1.0-${BUILDNUMBER}*
   * For the **Environment**, enter *MyEnvironment*
+
+
+  # Triggers
+
+  ## Introduction
+
+  * Triggers offer you an automated way to create and run a release.
+  * A trigger is a kind of XL Release plugin executed periodically and able to create and run a release from a template.
+  * Access Triggers from the "Show" menu or next to "Design"
+
+## Settings
+
+## Git trigger configuration
+
+## Exercise: Trigger
+
+There are two ways to add a trigger, one is via the **Triggers** menu in your template, the other is via the **Triggers** page that is part of the **Design** pages.
+
+* Go to the **Triggers** page
+* Click **Add trigger**
+* For **Trigger type**, select *Time: Schedule*
+* For **Use template**, select *Triggered Template*
+* For the **Title**, use *MyTrigger*
+* In the **Release Title**, use the `${triggerTime}` variable
+* Use either a *CRON* expression or the *REPEAT* option to have the trigger create a release every minute
+  * When using the *CRON* expression, every minute looks like this: `* */60 * * * *`
+
