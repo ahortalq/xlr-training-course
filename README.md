@@ -380,3 +380,180 @@ We will now save this current version of our template:
   * **Name**: 1.0
   * **Description**: Creating the basics
 
+# Tags and filters
+
+## Introduction
+
+Tags are critical for controlling visibility
+
+* Tags can be added to tasks and releases for filtering
+* A task and release can have zero or more tags
+
+## Task Filtering
+
+* Table View presents template in a tabular format
+* Filtering options let you narrow down the tasks shown by:
+  * Name, start and end date, duration, type, assigned-to, and/or tags.
+
+## Exercise: Tags & Filters
+
+Add the following tags:
+
+* To your **Template**, add the *automation* and *jenkins* tags
+  * Click on the **Release Flow** Dropdown and select **Properties**
+    * When adding a tag to your template, be sure to hit **ENTER** after entering your tag
+    * Make sure to hit the **Save** button after putting in both tags
+* Add the *automation* tag to the following tasks:
+  * Build with Jenkins
+  * Deploy to Development
+  * Deploy to Test
+  * Deploy to Production
+
+# Variables
+
+## Introduction
+
+Variables act as placeholders for information that:
+
+* is unknown during template creation
+* is used in several places in a release
+* varies release to release, or within a release
+* may change during the release
+
+Variables can be used at the **Release** level, **Folder** level, or **Global** level. A release will inherit variables from its template.
+
+Variables are identified by the ${ } syntax
+
+## Accessing Variables
+
+To view/manage release variables, select Variables from "Show" menu.
+
+Click "New variable" button to create a new variable
+
+## Creating Variables
+
+Enter the data on the resulting popup
+
+## Creating a variable directly on a task
+
+* Type new variable name directly into task property (creates variable with default properties)
+  * Type will be context-dependent
+* Or use dropdown to select variable already created.
+
+## Using variables in subsequent tasks
+
+The output variable from one task can be passed as input to another
+
+## Using variables in other variables
+
+A variable can also be part of another variable's value. Nesting variables is supported in version 8.5+.
+
+## Special variables
+
+These variables are built in to every release and template.
+
+* ${release.id}
+* ${release.title}
+* ${release.status}
+* ${release.owner}
+* ${release.description}
+* ${release.flagStatus}
+* ${release.flagComment}
+* ${release.tags}
+
+## Global variables
+
+Global variables have scope across all folders, template, and releases (use judisciously)
+
+The same types are available as for release variables
+
+## Exercise: Variables
+
+Add the following variables to your template:
+
+* Click on the **Show: Release Flow** Dropdown and select **Variables**
+* Click **New Variable**
+  * **Variable name**: APPNAME
+  * Click **Create**
+* Repeat for the following variables:
+  * **Variable Name**: VERSION
+  * **Variable Name**: THRESHOLD
+
+# Releases
+
+## Lifecycle
+
+A release can go through various stages:
+
+* A blueprint of a release is defined as a **template**
+* From the template, a **planned release** is created.
+* When it is started, the release becomes **active** and phases and tasks are executed.
+* When finished, the release is **completed**. 
+
+## Start a release
+
+There are 4 ways to start a release:
+
+* Use **trigger**
+* Manually create a **New Release** from template
+* Use the **REST api** (or any other 3rd party tool) - covered in Customizations
+* Via the **Create Release task** - covered in Customizations
+
+### Trigger
+
+* Triggers are an automated way to create and run a release
+* Create, manage, and access Triggers using the Triggers area of the Show menu
+
+### Manual
+
+**New Release**: Create a new release from the template (this will be a copy of the template).
+
+## Release Flow editor
+
+* The Release Flow editor shows phases and tasks in release and allows you to add, move, edit, and delete them
+* Use editor for running releases and templates
+* **Note**: Changes to template and release are not connected once release has been created.
+
+## Release Flow planner
+
+Under **Planner** in the **Release Flow** view an interactive Gantt chart of the release
+
+## Release activity logs
+
+View activity logs to see an audit trail of all activity in a release
+
+
+## Exercise: Release
+
+Create and complete the release from your template
+
+* In your template, click **New Release**
+* **Name** your release *Corporate Application Release 1* and fill out values for the required **Variables**
+* Click on **Create**
+* Click **Start Release**
+* Go through all the tasks and complete the release
+  * Make sure you assign tasks to yourself, using the **Assign to me** button, otherwise you cannot complete them
+
+# The Release Dashboard
+
+## Introduction
+
+The Release Dashboard is a set of tiles displaying status of a release, using XLR, or external sources.
+
+## Configuration
+
+## Exercise: Dashboards
+
+Go to your release dashboard, and reconfigure it.
+
+* Click on the **Show: Release Flow** Dropdown and select **Release Dashboard**
+* Click on **Configure Dashboard**
+* Click on **Add Tiles**
+* Scroll down to the **Markdown Text** tile and click *Add*
+* Click on **Add Tiles** again, to get rid of the tiles list
+* Hover over the newly added **Markdown Text** tile, and click on the **Configuration** cogwheel
+* Change the **Title** to *My Text Tile*
+* Change the **Content** to *# Hello*
+
+
+# Release Overview
