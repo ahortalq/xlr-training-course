@@ -702,9 +702,66 @@ There are two ways to add a trigger, one is via the **Triggers** menu in your te
 * Go to the **Triggers** page
 * Click **Add trigger**
 * For **Trigger type**, select *Time: Schedule*
-* For **Use template**, select *Triggered Template*
+* For **Use template**, select one of your templates
 * For the **Title**, use *MyTrigger*
 * In the **Release Title**, use the `${triggerTime}` variable
 * Use either a *CRON* expression or the *REPEAT* option to have the trigger create a release every minute
   * When using the *CRON* expression, every minute looks like this: `* */60 * * * *`
+
+
+# Reporting
+
+## Dashboard
+
+XL Release reports dashboard provides information about your releases, such as the number, duration, and level of automation.
+
+You can select a time period or search by tags
+
+## Release Information and Task Efficiency
+
+* **Completed releases**: # of completed releases/ # of templates used
+* **Longest task type**: task type with longest duration
+* **Avg. release duration**: average and longest duration of a release
+* **Avg. task duration**: average and longest duration of a task
+* **Task efficiency**: % of manual and automated tasks overall
+* **Time spent per task**: % of time spent for manual and automated tasks
+
+## Release efficiency
+
+Provides overview of overall level of automation during selected time period, including:
+
+* Total numbers of tasks and time spent
+* A comparison of the percentage of automated tasks and manual tasks
+* A comparison of the time spent on automated tasks and manual tasks
+
+## Number of releases
+
+The number of releases completed in each month in the selected time period.
+
+## Top 10 longest releases
+
+Top 10 longest releases shows which release took most time to be completed.
+
+## Average release duration and automation
+
+The percentage of automation aggregated per month
+
+## Top 10 longest phases and tasks
+
+Top 10 longest phases shows which parts of release took most time Top 10 longest releases
+
+Top 10 longest tasks shows that had the longest duration 
+
+## Top 10 tasks assignees
+
+Shows which users have spent the most time and handled the most tasks in the selected period.
+
+## Release value stream
+
+The release value stream report focuses on the quality of completed releases.
+
+
+## Exercise: Dashboards
+
+Have a look at the Dashboards
 
