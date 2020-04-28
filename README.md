@@ -637,3 +637,47 @@ The Create-Release task
   * Name it *Master Release*
 * Go to the **Release** view
 * Complete the two releases
+
+
+# Integration
+
+## Plugin Manager
+
+## Community Integrations
+
+XL Release plugins available at https://github.com/xebialabs-community/
+
+
+## Exercise: Integration
+
+Define integrations with Jenkins and XL Deploy
+
+* Go to the **Settings** page
+* Click on **Shared configuration**
+* Click on the **+** next to **Jenkins Server**
+  * **Name**: *Jenkins*
+  * **URL**: *localhost:8080*
+  * Click **Save**
+* Click on the **+** next to **XL Deploy Server**
+  * **Name**: *XL Deploy*
+  * **URL**: *localhost:4516*
+  * Click **Save**
+
+In your own environment, you would also fill the authentication values, and use the **Test** button to test the integrations.
+
+However, as we do not have a Jenkins or XL Deploy in this environment, we will only pretend to have them.
+
+* Go to **Design**
+* Add a new folder called *Integrations*
+* Create a new template in this folder called *My Integration Template*
+* Add a *Jenkins > Build task*
+  * Name it *Build*
+  * For the **Server**, select the *Jenkins* server we just created
+  * For **Job Name**, enter *MyJob*
+  * For the **Output Property Build Number**, enter *BUILDNUMBER*
+* Add a *XL Deploy > Deploy task*
+  * Name it *Deploy*
+  * For the **Server**, select the *XL Deploy* server we just added
+  * For the **Application**, enter *MyApp*
+  * For the **Version**, enter *1.0-${BUILDNUMBER}*
+  * For the **Environment**, enter *MyEnvironment*
