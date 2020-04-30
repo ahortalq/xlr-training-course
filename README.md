@@ -760,6 +760,19 @@ Shows which users have spent the most time and handled the most tasks in the sel
 
 The release value stream report focuses on the quality of completed releases.
 
+For each phase, an indicator is built based on these metrics:
+
+* Flagged: Total number of flags added to tasks in the phase
+* Failured: Total number of task failures in the phase
+* Delayed: Number of tasks that completed after their due date
+
+Click to open a release in the flow editor. You can view further metrics and filter tasks
+
+## Custom Dashboards
+
+Custom dashboards can be used to display more targeted data. To create and configure a custom dashboard.
+
+By default, tiles will provide all information about all releases, so they need to be configured to display what you want to see.
 
 ## Exercise: Dashboards
 
