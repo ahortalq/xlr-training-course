@@ -17,7 +17,6 @@
 * Integrations. Notifications, Jira, XL Deploy
 * Triggers. How to define scm triggers
 * Reporting. Where to find bottlenecks
-* Links. Additional information
 
 # Introduction
 
